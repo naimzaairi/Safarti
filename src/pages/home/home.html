@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Accueil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div>
+        <ion-img id="logo" style="width: 250px; height: 110px;" src="assets/images/safartilogor.png"></ion-img>
+    </div>
+
+    <ion-list>
+
+        <div id="home-form">
+           <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Destination</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Départ</ion-label>
+                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Heure</ion-label>
+                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>
+                </ion-item>
+
+                <button class="btn-red" (tap)="showResults()" ion-button full>Rechercher</button>
+
+            </ion-list>
+        </div>
+        
+    </ion-list>
+  
+
+</ion-content>

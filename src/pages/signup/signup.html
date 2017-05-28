@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Inscription</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h2 class="text-red"> Veuillez remplir les informations </h2>
+
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Nom </ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Prénom</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Password</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Téléphone</ion-label>
+            <ion-input type="number"></ion-input>
+        </ion-item>
+
+        <button class="btn-red" (tap)="showTabsPage()" ion-button full>S'inscrire !</button>
+
+    </ion-list>
+  
+
+</ion-content>

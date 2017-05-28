@@ -1,0 +1,38 @@
+page-first {
+
+    $colors: (
+        primary:    #B71C1C,
+        secondary:  #32db64,
+        danger:     #f53d3d,
+        light:      #f4f4f4,
+        dark:       #222
+        );
+
+    .btn-red{
+        display: block;
+        margin-top: 10px;
+        background-color: #B71C1C;
+    }
+
+    ion-img{
+        background: none;
+        display: block;
+        position:absolute;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        top:30%;
+        transform:translateY(-50%);
+    }
+
+    #logo > img{
+        width: 250px;
+        height: 110px;
+    }
+
+    #menu-boutons{
+        display: block;
+        margin-top: 260px;
+
+    }
+}

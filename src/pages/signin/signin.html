@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Se connecter</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div>
+        <ion-img id="logo" style="width: 250px; height: 110px;" src="assets/images/safartilogor.png"></ion-img>
+    </div>
+
+    <ion-list>
+
+        <div id="menu-signin">
+           <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Email</ion-label>
+                    <ion-input type="text" value=""></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Mot de passe</ion-label>
+                    <ion-input type="password"></ion-input>
+                </ion-item>
+
+                <button class="btn-red" (tap)="showTabsPage()" ion-button full>Se connecter</button>
+
+            </ion-list>
+        </div>
+        
+    </ion-list>
+  
+
+</ion-content>
