@@ -24788,6 +24788,34 @@ page-home #home-form {
   margin-top: 210px;
 }
 
+page-results .btn-red {
+  display: block;
+  margin-top: 20px;
+  background-color: #B71C1C;
+}
+
+page-results ion-img {
+  background: none;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+page-results #logo > img {
+  width: 250px;
+  height: 110px;
+}
+
+page-results #home-form {
+  display: block;
+  margin-top: 210px;
+}
+
 page-signin .btn-red {
   display: block;
   margin-top: 20px;
