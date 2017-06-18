@@ -7,5 +7,32 @@
 </ion-header>
 
 <ion-content padding>
+  
+  <ion-segment [(ngModel)]="mesvoyages">
+    <ion-segment-button value="preparant">
+      Je prépare
+    </ion-segment-button>
+    <ion-segment-button value="participant">
+      Je participe
+    </ion-segment-button>
+  </ion-segment>
+
+<div [ngSwitch]="mesvoyages">
+  <ion-list *ngSwitchCase="'preparant'">
+    <ion-item>
+      <ion-thumbnail item-left>
+      </ion-thumbnail>
+      <h2>Naim</h2>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'participant'">
+    <ion-item>
+      <ion-thumbnail item-left>
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+  </ion-list>
+</div>
 
 </ion-content>
