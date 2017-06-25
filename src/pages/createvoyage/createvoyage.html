@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Accueil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h2>Créer un voyage:</h2>
+
+    <ion-list>
+
+        <div id="home-form">
+           <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Destination</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Départ</ion-label>
+                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Heure</ion-label>
+                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Prix</ion-label>
+                  <ion-input type="number" ng-model="amount" aria-label="amount"><span id="currency-default">{{amount | currency}}</span></ion-input>
+                </ion-item>
+
+                <button class="btn-red" ion-button full>Je crée mon voyage !</button>
+
+            </ion-list>
+
+        </div>
+        
+    </ion-list>
+
+    <script>
+        angular.module('currencyExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.amount = 1234.56;
+    }]);
+    </script>
+  
+
+</ion-content>

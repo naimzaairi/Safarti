@@ -55639,6 +55639,7 @@ webpackEmptyContext.id = 100;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__results_results__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createvoyage_createvoyage__ = __webpack_require__(267);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55652,6 +55653,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = (function () {
     function HomePage(navCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
@@ -55661,11 +55663,14 @@ var HomePage = (function () {
     HomePage.prototype.showResults = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__results_results__["a" /* ResultsPage */]);
     };
+    HomePage.prototype.showCreateVoyage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__createvoyage_createvoyage__["a" /* CreateVoyagePage */]);
+    };
     return HomePage;
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <div>\n        <ion-img id="logo" style="width: 250px; height: 110px;" src="assets/images/safartilogor.png"></ion-img>\n    </div>\n\n    <ion-list>\n\n        <div id="home-form">\n           <ion-list>\n\n                <ion-item>\n                    <ion-label floating>Destination</ion-label>\n                    <ion-input type="text"></ion-input>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Départ</ion-label>\n                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Heure</ion-label>\n                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <button class="btn-red" (tap)="showResults()" ion-button full>Rechercher</button>\n\n            </ion-list>\n        </div>\n        \n    </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <div>\n        <ion-img id="logo" style="width: 250px; height: 110px;" src="assets/images/safartilogor.png"></ion-img>\n    </div>\n\n    <ion-list>\n\n        <div id="home-form">\n           <ion-list>\n\n                <ion-item>\n                    <ion-label floating>Destination</ion-label>\n                    <ion-input type="text"></ion-input>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Départ</ion-label>\n                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Heure</ion-label>\n                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <button class="btn-red" (tap)="showResults()" ion-button full>Rechercher</button>\n\n            </ion-list>\n\n                <button id="btn-create" (tap)="showCreateVoyage()" ion-button outline>Créer un voyage !</button>\n        </div>\n        \n    </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]])
 ], HomePage);
@@ -55790,10 +55795,9 @@ SafartiPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-safarti',template:/*ion-inline-start:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/safarti/safarti.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Safarti\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n <ion-content>\n  <ion-list>\n    <ion-list-header>OPTIONS</ion-list-header>\n    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n      {{ item }}\n    </button>\n  </ion-list>\n</ion-content>\n\n'/*ion-inline-end:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/safarti/safarti.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]])
 ], SafartiPage);
 
-var _a, _b;
 //# sourceMappingURL=safarti.js.map
 
 /***/ }),
@@ -74393,8 +74397,9 @@ webpackEmptyContext.id = 199;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_signin_signin__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_results_results__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_createvoyage_createvoyage__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__ = __webpack_require__(109);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74407,6 +74412,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Pages
+
 
 
 
@@ -74434,7 +74440,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_first_first__["a" /* FirstPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
             __WEBPACK_IMPORTED_MODULE_10__pages_signin_signin__["a" /* SigninPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_results_results__["a" /* ResultsPage */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_results_results__["a" /* ResultsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_createvoyage_createvoyage__["a" /* CreateVoyagePage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -74450,11 +74457,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_first_first__["a" /* FirstPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
             __WEBPACK_IMPORTED_MODULE_10__pages_signin_signin__["a" /* SigninPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_results_results__["a" /* ResultsPage */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_results_results__["a" /* ResultsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_createvoyage_createvoyage__["a" /* CreateVoyagePage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_14__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -112048,6 +112056,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+/* 267 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateVoyagePage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CreateVoyagePage = (function () {
+    function CreateVoyagePage(navCtrl, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+        var amount = 1337.1337;
+        console.log("Coucou !");
+    }
+    return CreateVoyagePage;
+}());
+CreateVoyagePage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-createvoyage',template:/*ion-inline-start:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/createvoyage/createvoyage.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <h2>Créer un voyage:</h2>\n\n    <ion-list>\n\n        <div id="home-form">\n           <ion-list>\n\n                <ion-item>\n                    <ion-label floating>Destination</ion-label>\n                    <ion-input type="text"></ion-input>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Départ</ion-label>\n                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Heure</ion-label>\n                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label>Prix</ion-label>\n                  <ion-input type="number" ng-model="amount" aria-label="amount"><span id="currency-default">{{amount | currency}}</span></ion-input>\n                </ion-item>\n\n                <button class="btn-red" ion-button full>Je crée mon voyage !</button>\n\n            </ion-list>\n\n        </div>\n        \n    </ion-list>\n\n    <script>\n        angular.module(\'currencyExample\', [])\n    .controller(\'ExampleController\', [\'$scope\', function($scope) {\n      $scope.amount = 1234.56;\n    }]);\n    </script>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/ionic_projects/Safarti/src/pages/createvoyage/createvoyage.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]) === "function" && _b || Object])
+], CreateVoyagePage);
+
+var _a, _b;
+//# sourceMappingURL=createvoyage.js.map
 
 /***/ })
 /******/ ]);

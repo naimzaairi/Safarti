@@ -24732,6 +24732,12 @@ ion-navbar.toolbar {
   }
 }
 
+page-createvoyage .btn-red {
+  display: block;
+  margin-top: 20px;
+  background-color: #B71C1C;
+}
+
 page-first .btn-red {
   display: block;
   margin-top: 10px;
@@ -24786,6 +24792,13 @@ page-home #logo > img {
 page-home #home-form {
   display: block;
   margin-top: 210px;
+}
+
+page-home #btn-create {
+  display: block;
+  color: #B71C1C;
+  border-color: #B71C1C;
+  margin: 0 auto;
 }
 
 page-results .btn-red {

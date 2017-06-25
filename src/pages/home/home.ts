@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { ResultsPage } from '../results/results';
+import { CreateVoyagePage } from '../createvoyage/createvoyage';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,10 @@ export class HomePage {
  
   }
 
+showCreateVoyage() : void{
+  this.navCtrl.push(CreateVoyagePage);
 
+}
 
 }
 
