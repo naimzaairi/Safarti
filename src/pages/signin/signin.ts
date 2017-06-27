@@ -17,11 +17,11 @@ export class SigninPage {
 
   public login(){
     this.showLoading();
-    this.auth.login(this.loginCredentials).subscribe(allowed=>{
-      if(allowed){
-        this.navCtrl.setRoot(HomePage);
-      }else{
+    this.auth.login(this.loginCredentials).subscribe(data=>{
+      if(data == "No user was found"){
         this.showError("Verifier vos identifiants");
+      }else{
+         this.navCtrl.setRoot(HomePage);
       }
     },
     error =>{
