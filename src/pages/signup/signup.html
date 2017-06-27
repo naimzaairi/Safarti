@@ -7,36 +7,36 @@
 <ion-content padding>
 
     <h2 class="text-red"> Veuillez remplir les informations </h2>
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Nom </ion-label>
+                <ion-input type="text" value="" name="nom" [(ngModel)]="registerCredentials.nom" required></ion-input>
+            </ion-item>
 
-    <ion-list>
-        <ion-item>
-            <ion-label fixed>Nom </ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-label fixed>Prénom</ion-label>
+                <ion-input type="text" name="prenom" [(ngModel)]="registerCredentials.prenom" required></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-label fixed>Prénom</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-label fixed>Email</ion-label>
+                <ion-input type="email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-label fixed>Email</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-label fixed>Password</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-label fixed>Password</ion-label>
-            <ion-input type="password"></ion-input>
-        </ion-item>
+            <ion-item>
+                <ion-label fixed>Téléphone</ion-label>
+                <ion-input type="number" name="telephone" [(ngModel)]="registerCredentials.telephone" required></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-label fixed>Téléphone</ion-label>
-            <ion-input type="number"></ion-input>
-        </ion-item>
+            <button class="btn-red" type="submit" [disabled]="!registerForm.form.valid"  ion-button full>S'inscrire !</button>
 
-        <button class="btn-red" (tap)="showTabsPage()" ion-button full>S'inscrire !</button>
-
-    </ion-list>
-  
+        </ion-list>
+    </form>
 
 </ion-content>

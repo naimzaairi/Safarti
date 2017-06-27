@@ -13,21 +13,22 @@
     <ion-list>
 
         <div id="menu-signin">
-           <ion-list>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating>Email</ion-label>
+                        <ion-input type="text" value="" name="email" [(ngModel)]="loginCredentials.email" required></ion-input>
+                    </ion-item>
 
-                <ion-item>
-                    <ion-label floating>Email</ion-label>
-                    <ion-input type="text" value=""></ion-input>
-                </ion-item>
+                    <ion-item>
+                        <ion-label floating>Mot de passe</ion-label>
+                        <ion-input type="password" name="email" [(ngModel)]="loginCredentials.password" required></ion-input>
+                    </ion-item>
 
-                <ion-item>
-                    <ion-label floating>Mot de passe</ion-label>
-                    <ion-input type="password"></ion-input>
-                </ion-item>
+                    <button class="btn-red" type="submit"  [disabled]="!loginForm.form.valid" ion-button full>Se connecter</button>
 
-                <button class="btn-red" (tap)="showTabsPage()" ion-button full>Se connecter</button>
-
-            </ion-list>
+                </ion-list>
+            </form>
         </div>
         
     </ion-list>

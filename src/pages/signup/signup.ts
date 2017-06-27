@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import  {AuthService } from '../../services/auth-service';
 
-import { TabsPage } from '../tabs/tabs';
+import { SigninPage } from '../signin/signin';
 
 @Component({
   selector: 'page-signup',
@@ -10,26 +11,43 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class SignupPage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  createSuccess = false;
+  registerCredentials = {nom:'', prenom:'', email: '', password: '', telephone:'' };
 
+  constructor(private navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController) { }
+  
+  public register() {
+    this.auth.register(this.registerCredentials).subscribe(success => {
+      if (success == "User Added Successfully") {
+        this.createSuccess = true;
+        this.showSigninPage("Success", "Votre compte est désormais crée.");
+      } else {
+        console.log(success);
+        this.showSigninPage("Error", "Verifier vos données");
+      }
+    },
+      error => {
+        this.showSigninPage("Error", error);
+      });
   }
 
- showTabsPage(): void{
+  showSigninPage(title, text): void{
 
-   let confirm = this.alertCtrl.create({
-      title: 'Bienvenue !',
-      message: 'Votre compte est désormais crée. Un mail vous a été envoyé.',
+   let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
       buttons: [
         {
           text: 'OK',
-          handler: () => {
-            this.navCtrl.push(TabsPage);
+          handler: data => {
+            if (this.createSuccess) {
+              this.navCtrl.setRoot(SigninPage);
+            }
           }
         }
       ]
     });
-    confirm.present();
-
+    alert.present();
   }
 
 
