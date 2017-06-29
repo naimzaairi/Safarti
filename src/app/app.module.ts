@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AuthService } from './../services/auth-service';
+import { VoyageService } from './../services/voyage-service';
 // Pages
 import { MesVoyagesPage } from '../pages/mesvoyages/mesvoyages';
 import { SafartiPage } from '../pages/safarti/safarti';
@@ -54,7 +55,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    VoyageService
   ]
 })
 export class AppModule {}

@@ -4,13 +4,15 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 export class User {
+  id: number;
   nom: string;
   prenom: string;
   email: string;
   password: string;
   telephone: string;
 
-  constructor(nom: string, prenom: string, email: string, password: string, telephone: string) {
+  constructor( nom: string, prenom: string, email: string, password: string, telephone: string, id?: number) {
+    this.id = id;
     this.nom = nom;
     this.prenom = prenom;
     this.telephone = telephone;
@@ -39,7 +41,7 @@ export class AuthService {
           .subscribe(data => {
             if (data) {
               this.currentUser = new User(data.nom, data.prenom, data.email,
-                data.password, data.telephone);
+                data.password, data.telephone, data.id);
             } 
             observer.next(data);
             observer.complete();

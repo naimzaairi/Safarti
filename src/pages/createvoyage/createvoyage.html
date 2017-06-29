@@ -11,32 +11,38 @@
     <ion-list>
 
         <div id="home-form">
+          <form (ngSubmit)="addVoyage()" #addvoyageForm="ngForm">
            <ion-list>
 
                 <ion-item>
+                    <ion-label floating>Départ</ion-label>
+                    <ion-input type="text" name="depart" [(ngModel)]="voyageInfo.depart"></ion-input>
+                </ion-item>
+                <ion-item>
                     <ion-label floating>Destination</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="text" name="destination" [(ngModel)]="voyageInfo.destination"></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Départ</ion-label>
-                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+                  <ion-label>Date départ</ion-label>
+                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY"  name="date" [(ngModel)]="voyageInfo.date"></ion-datetime>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Heure</ion-label>
-                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>
+                  <ion-label>Heure départ</ion-label>
+                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" name="heure" [(ngModel)]="voyageInfo.heure"></ion-datetime>
                 </ion-item>
 
                 <ion-item>
                   <ion-label>Prix</ion-label>
-                  <ion-input type="number" ng-model="amount" aria-label="amount"><span id="currency-default">{{amount | currency}}</span></ion-input>
+                  <ion-input type="number" aria-label="amount" name="prix" [(ngModel)]="voyageInfo.prix"><span id="currency-default"></span></ion-input>
                 </ion-item>
 
-                <button class="btn-red" ion-button full>Je crée mon voyage !</button>
+                <button class="btn-red" type="submit" [disabled]="!addvoyageForm.form.valid" ion-button full>Je crée mon voyage !</button>
 
             </ion-list>
-
+          
+          </form>
         </div>
         
     </ion-list>

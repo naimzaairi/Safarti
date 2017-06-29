@@ -11,7 +11,6 @@ import { CreateVoyagePage } from '../createvoyage/createvoyage';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-    console.log("Coucou !")
   }
 
   showResults() : void{
