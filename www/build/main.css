@@ -24800,6 +24800,30 @@ page-home #btn-create {
   margin: 0 auto;
 }
 
+page-mvoyparticipant .text-vert {
+  color: green;
+}
+
+page-mvoyparticipant .icon-size {
+  font-size: 35px;
+}
+
+page-mvoyparticipant .inline {
+  display: inline;
+}
+
+page-mvoypreparant .text-vert {
+  color: green;
+}
+
+page-mvoypreparant .icon-size {
+  font-size: 35px;
+}
+
+page-mvoypreparant .inline {
+  display: inline;
+}
+
 page-researchdetail .title {
   font-weight: bold;
 }

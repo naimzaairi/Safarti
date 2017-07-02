@@ -16,6 +16,8 @@ import { SigninPage } from '../pages/signin/signin';
 import { ResultsPage } from '../pages/results/results';
 import { CreateVoyagePage } from '../pages/createvoyage/createvoyage';
 import { ResearchDetailPage } from '../pages/researchdetail/researchdetail';
+import { MVoyPreparantPage } from '../pages/mvoypreparant/mvoypreparant';
+import { MVoyParticipantPage } from '../pages/mvoyparticipant/mvoyparticipant';
 //
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,7 +35,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     ResultsPage,
     CreateVoyagePage,
-    ResearchDetailPage
+    ResearchDetailPage,
+    MVoyParticipantPage,
+    MVoyPreparantPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     ResultsPage,
     CreateVoyagePage,
-    ResearchDetailPage
+    ResearchDetailPage,
+    MVoyParticipantPage,
+    MVoyPreparantPage
   ],
   providers: [
     StatusBar,

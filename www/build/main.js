@@ -44797,6 +44797,8 @@ HomePage = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mvoypreparant_mvoypreparant__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mvoyparticipant_mvoyparticipant__ = __webpack_require__(273);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MesVoyagesPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44809,19 +44811,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var MesVoyagesPage = (function () {
     function MesVoyagesPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    MesVoyagesPage.prototype.showVoyPrepDetail = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__mvoypreparant_mvoypreparant__["a" /* MVoyPreparantPage */]);
+    };
+    MesVoyagesPage.prototype.showVoyPartDetail = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mvoyparticipant_mvoyparticipant__["a" /* MVoyParticipantPage */]);
+    };
     return MesVoyagesPage;
 }());
 MesVoyagesPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-mesvoyages',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mesvoyages/mesvoyages.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Mes Voyages\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  \n  <ion-segment [(ngModel)]="mesvoyages">\n    <ion-segment-button value="preparant">\n      Je prépare\n    </ion-segment-button>\n    <ion-segment-button value="participant">\n      Je participe\n    </ion-segment-button>\n  </ion-segment>\n\n<div [ngSwitch]="mesvoyages">\n  <ion-list *ngSwitchCase="\'preparant\'">\n      <ion-item>\n        <h2>Casablanca - Rabat</h2>\n        <span> 01/07/2017</span> - <span>15:30</span>\n        <p>Naïm Zaaïri</p>\n        <button ion-button clear item-right>View</button>\n    </ion-item>\n  </ion-list>\n\n  <ion-list *ngSwitchCase="\'participant\'">\n    <ion-item>\n      <h2>Casablanca - Marrakech</h2>\n      <span> 01/07/2017</span> - <span>15:30</span>\n      <p>Naïm Zaaïri</p>\n      <button ion-button clear item-right>View</button>\n    </ion-item>\n  </ion-list>\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mesvoyages/mesvoyages.html"*/
+        selector: 'page-mesvoyages',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mesvoyages/mesvoyages.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Mes Voyages\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  \n  <ion-segment [(ngModel)]="mesvoyages">\n    <ion-segment-button value="preparant">\n      Je prépare\n    </ion-segment-button>\n    <ion-segment-button value="participant">\n      Je participe\n    </ion-segment-button>\n  </ion-segment>\n\n<div [ngSwitch]="mesvoyages">\n  <ion-list *ngSwitchCase="\'preparant\'">\n      <ion-item>\n        <h2>Casablanca - Rabat</h2>\n        <span> 15/07/2017</span> - <span>15:30</span>\n        <p>Naïm Zaaïri</p>\n        <button ion-button clear item-right (tap)="showVoyPrepDetail()" >View</button>\n    </ion-item>\n  </ion-list>\n\n  <ion-list *ngSwitchCase="\'participant\'">\n    <ion-item>\n      <h2>Casablanca - Marrakech</h2>\n      <span> 17/07/2017</span> - <span>15:30</span>\n      <p>Naïm Zaaïri</p>\n      <button ion-button clear item-right (tap)="showVoyPartDetail()" >View</button>\n    </ion-item>\n  </ion-list>\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mesvoyages/mesvoyages.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
 ], MesVoyagesPage);
 
+var _a;
 //# sourceMappingURL=mesvoyages.js.map
 
 /***/ }),
@@ -58156,10 +58167,9 @@ ResultsPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-results',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/results/results.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Résultats </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <ion-list>\n\n        <div id="menu-signin">\n          <ion-list>\n                <ion-item>\n                    <ion-thumbnail item-left>\n                        <ion-icon name="contact"></ion-icon>\n                    </ion-thumbnail>\n                    <h2>Casablanca - Rabat</h2>\n                    <span> 01/07/2017</span> - <span>15:30</span>\n                    <p>Naïm Zaaïri</p>\n                    <button ion-button clear item-right (tap)="showResearchDetail()">View</button>\n                </ion-item>\n            </ion-list>\n        </div>\n        \n    </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/results/results.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]])
 ], ResultsPage);
 
-var _a, _b;
 //# sourceMappingURL=results.js.map
 
 /***/ }),
@@ -77012,8 +77022,10 @@ webpackEmptyContext.id = 205;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_results_results__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_createvoyage_createvoyage__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_researchdetail_researchdetail__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_mvoypreparant_mvoypreparant__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_mvoyparticipant_mvoyparticipant__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(113);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -77029,6 +77041,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Pages
+
+
 
 
 
@@ -77060,7 +77074,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__pages_signin_signin__["a" /* SigninPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_results_results__["a" /* ResultsPage */],
             __WEBPACK_IMPORTED_MODULE_15__pages_createvoyage_createvoyage__["a" /* CreateVoyagePage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_researchdetail_researchdetail__["a" /* ResearchDetailPage */]
+            __WEBPACK_IMPORTED_MODULE_16__pages_researchdetail_researchdetail__["a" /* ResearchDetailPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_mvoyparticipant_mvoyparticipant__["a" /* MVoyParticipantPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_mvoypreparant_mvoypreparant__["a" /* MVoyPreparantPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -77079,11 +77095,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__pages_signin_signin__["a" /* SigninPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_results_results__["a" /* ResultsPage */],
             __WEBPACK_IMPORTED_MODULE_15__pages_createvoyage_createvoyage__["a" /* CreateVoyagePage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_researchdetail_researchdetail__["a" /* ResearchDetailPage */]
+            __WEBPACK_IMPORTED_MODULE_16__pages_researchdetail_researchdetail__["a" /* ResearchDetailPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_mvoyparticipant_mvoyparticipant__["a" /* MVoyParticipantPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_mvoypreparant_mvoypreparant__["a" /* MVoyPreparantPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_6__services_voyage_service__["a" /* VoyageService */]
@@ -114616,12 +114634,84 @@ var ResearchDetailPage = (function () {
 }());
 ResearchDetailPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-researchdetail',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/researchdetail/researchdetail.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Détail du voyage </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <ion-card>\n\n  <ion-item>\n    <ion-avatar item-start>\n    </ion-avatar>\n    <h2>Casablanca - Rabat</h2>\n    <p>01/07/2017</p>\n    <p>14:30 </p>\n  </ion-item>\n\n  <ion-card-content>\n    <h2 class="title">Contact</h2>\n    <ion-icon name="person"></ion-icon> Organisateur: <h3> Naïm Zaaïri</h3>\n    <ion-icon name="call"></ion-icon> Téléphone: <h3> 06 01 02 03 04</h3>\n    <ion-icon name="mail"></ion-icon> Mail: <h3> n.zaairi96@gmail.com</h3>\n  </ion-card-content>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear>\n        <ion-icon name="checkmark"></ion-icon>\n        <div>Participer !</div>\n      </button>\n    </ion-col>\n\n    <ion-col>\n      <button ion-button icon-left clear>\n        <ion-icon name="call"></ion-icon>\n        <div>Appeler</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n</ion-card>\n    \n          \n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/researchdetail/researchdetail.html"*/
+        selector: 'page-researchdetail',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/researchdetail/researchdetail.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Détail du voyage </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n<ion-card>\n\n  <ion-item>\n    <ion-avatar item-start>\n    </ion-avatar>\n    <h2>Casablanca - Rabat</h2>\n    <p>01/07/2017</p>\n    <p>14:30 </p>\n  </ion-item>\n\n  <ion-card-content>\n    <h2 class="title">Contact</h2>\n    <ion-icon name="person"></ion-icon> Organisateur: <h3> Naïm Zaaïri</h3>\n    <ion-icon name="call"></ion-icon> Téléphone: <h3> 06 01 02 03 04</h3>\n    <ion-icon name="mail"></ion-icon> Mail: <h3> n.zaairi96@gmail.com</h3>\n  </ion-card-content>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear>\n        <ion-icon name="checkmark"></ion-icon>\n        <div>Participer !</div>\n      </button>\n    </ion-col>\n\n    <ion-col>\n      <button ion-button icon-left clear>\n        <ion-icon name="call"></ion-icon>\n        <div>Appeler</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n\n</ion-card>\n    \n          \n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/researchdetail/researchdetail.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]])
 ], ResearchDetailPage);
 
 //# sourceMappingURL=researchdetail.js.map
+
+/***/ }),
+/* 273 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MVoyParticipantPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MVoyParticipantPage = (function () {
+    function MVoyParticipantPage(navCtrl, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+    }
+    return MVoyParticipantPage;
+}());
+MVoyParticipantPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-mvoyparticipant',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mvoyparticipant/mvoyparticipant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Détail</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n<h1> Résumé du voyage</h1>\n\n<ion-card>\n\n  <ion-item>\n    <ion-avatar item-start>\n      <ion-icon name="car" class="icon-size"></ion-icon>\n    </ion-avatar>\n    <div class="inline">\n      <h2>Casablanca - Marrakech</h2>\n      <p>Jour: 17/07/2017</p>\n      <p>Heure: 15:30 </p>\n    </div>\n  </ion-item>\n\n</ion-card>\n\n<h1> L\'organisateur </h1>\n\n  <ion-card>\n    <ion-card-header>\n      Jean-Piere Salmon\n    </ion-card-header>\n    <ion-card-content>\n      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>\n\n      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: jp-salmon@gmail.com</h3>  \n    </ion-card-content>\n\n    <ion-row>\n\n    <ion-col>\n      <button ion-button icon-left clear class="text-vert">\n        <ion-icon name="call"></ion-icon>\n        <div class="text-vert">Appeler</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n  </ion-card>  \n    \n  <button ion-button full>Annuler Voyage</button>\n          \n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mvoyparticipant/mvoyparticipant.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]) === "function" && _b || Object])
+], MVoyParticipantPage);
+
+var _a, _b;
+//# sourceMappingURL=mvoyparticipant.js.map
+
+/***/ }),
+/* 274 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MVoyPreparantPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MVoyPreparantPage = (function () {
+    function MVoyPreparantPage(navCtrl, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+    }
+    return MVoyPreparantPage;
+}());
+MVoyPreparantPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-mvoypreparant',template:/*ion-inline-start:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mvoypreparant/mvoypreparant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Détail</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n<h1> Résumé du voyage</h1>\n\n<ion-card>\n\n  <ion-item>\n    <ion-avatar item-start>\n      <ion-icon name="car" class="icon-size"></ion-icon>\n    </ion-avatar>\n    <div class="inline">\n      <h2>Casablanca - Rabat</h2>\n      <p>Jour: 01/07/2017</p>\n      <p>Heure: 14:30 </p>\n    </div>\n  </ion-item>\n\n</ion-card>\n\n<h1> Les participants </h1>\n\n  <ion-card>\n    <ion-card-header>\n      Naïm Zaaïri\n    </ion-card-header>\n    <ion-card-content>\n      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>\n\n      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: n.zaairi96@gmail.com</h3>  \n    </ion-card-content>\n\n    <ion-row>\n\n    <ion-col>\n      <button ion-button icon-left clear class="text-vert">\n        <ion-icon name="call"></ion-icon>\n        <div class="text-vert">Appeler</div>\n      </button>\n    </ion-col>\n\n    <ion-col>\n      <button ion-button icon-left clear>\n        <ion-icon name="close-circle"></ion-icon>\n        <div>Supprimer</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n  </ion-card>  \n\n  <ion-card>\n    <ion-card-header>\n      Abdelilah Benhima\n    </ion-card-header>\n    <ion-card-content>\n      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 03 05 07 08</h3> <br/>\n\n      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: abdelilahben@gmail.com</h3>  \n    </ion-card-content>\n\n    <ion-row>\n\n    <ion-col>\n      <button ion-button icon-left clear class="text-vert">\n        <ion-icon name="call"></ion-icon>\n        <div class="text-vert">Appeler</div>\n      </button>\n    </ion-col>\n\n    <ion-col>\n      <button ion-button icon-left clear>\n        <ion-icon name="close-circle"></ion-icon>\n        <div>Supprimer</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Jean-Pierre Salmon\n    </ion-card-header>\n    <ion-card-content>\n      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>\n\n      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: jp-salmon@gmail.com</h3>  \n    </ion-card-content>\n\n    <ion-row>\n\n    <ion-col>\n      <button ion-button icon-left clear class="text-vert">\n        <ion-icon name="call"></ion-icon>\n        <div class="text-vert">Appeler</div>\n      </button>\n    </ion-col>\n\n    <ion-col>\n      <button ion-button icon-left clear>\n        <ion-icon name="close-circle"></ion-icon>\n        <div>Supprimer</div>\n      </button>\n    </ion-col>\n\n  </ion-row>\n  </ion-card>\n    \n  <button ion-button full>Annuler Voyage</button>\n          \n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/naimzaairi/Documents/GitHub/Safarti/src/pages/mvoypreparant/mvoypreparant.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* AlertController */]) === "function" && _b || Object])
+], MVoyPreparantPage);
+
+var _a, _b;
+//# sourceMappingURL=mvoypreparant.js.map
 
 /***/ })
 /******/ ]);

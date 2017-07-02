@@ -21,18 +21,18 @@
   <ion-list *ngSwitchCase="'preparant'">
       <ion-item>
         <h2>Casablanca - Rabat</h2>
-        <span> 01/07/2017</span> - <span>15:30</span>
+        <span> 15/07/2017</span> - <span>15:30</span>
         <p>Naïm Zaaïri</p>
-        <button ion-button clear item-right>View</button>
+        <button ion-button clear item-right (tap)="showVoyPrepDetail()" >View</button>
     </ion-item>
   </ion-list>
 
   <ion-list *ngSwitchCase="'participant'">
     <ion-item>
       <h2>Casablanca - Marrakech</h2>
-      <span> 01/07/2017</span> - <span>15:30</span>
+      <span> 17/07/2017</span> - <span>15:30</span>
       <p>Naïm Zaaïri</p>
-      <button ion-button clear item-right>View</button>
+      <button ion-button clear item-right (tap)="showVoyPartDetail()" >View</button>
     </ion-item>
   </ion-list>
 </div>
