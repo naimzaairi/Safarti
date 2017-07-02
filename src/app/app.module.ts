@@ -15,6 +15,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { SigninPage } from '../pages/signin/signin';
 import { ResultsPage } from '../pages/results/results';
 import { CreateVoyagePage } from '../pages/createvoyage/createvoyage';
+import { ResearchDetailPage } from '../pages/researchdetail/researchdetail';
 //
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     SigninPage,
     ResultsPage,
-    CreateVoyagePage
+    CreateVoyagePage,
+    ResearchDetailPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     SigninPage,
     ResultsPage,
-    CreateVoyagePage
+    CreateVoyagePage,
+    ResearchDetailPage
   ],
   providers: [
     StatusBar,

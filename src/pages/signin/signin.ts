@@ -15,6 +15,12 @@ export class SigninPage {
 
   constructor(private navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
 
+  //A SUPPRIMER QUAND MODIFICATION EST TERMINE
+  showHome() {
+    this.navCtrl.push(HomePage);
+  }
+
+
   public login(){
     this.showLoading();
     this.auth.login(this.loginCredentials).subscribe(data=>{

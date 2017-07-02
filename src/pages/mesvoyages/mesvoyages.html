@@ -19,18 +19,20 @@
 
 <div [ngSwitch]="mesvoyages">
   <ion-list *ngSwitchCase="'preparant'">
-    <ion-item>
-      <ion-thumbnail item-left>
-      </ion-thumbnail>
-      <h2>Naim</h2>
+      <ion-item>
+        <h2>Casablanca - Rabat</h2>
+        <span> 01/07/2017</span> - <span>15:30</span>
+        <p>Naïm Zaaïri</p>
+        <button ion-button clear item-right>View</button>
     </ion-item>
   </ion-list>
 
   <ion-list *ngSwitchCase="'participant'">
     <ion-item>
-      <ion-thumbnail item-left>
-      </ion-thumbnail>
-      <h2>Luna</h2>
+      <h2>Casablanca - Marrakech</h2>
+      <span> 01/07/2017</span> - <span>15:30</span>
+      <p>Naïm Zaaïri</p>
+      <button ion-button clear item-right>View</button>
     </ion-item>
   </ion-list>
 </div>

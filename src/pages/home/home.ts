@@ -10,6 +10,9 @@ import { CreateVoyagePage } from '../createvoyage/createvoyage';
 })
 export class HomePage {
 
+//Variables
+   myDate: String = new Date().toISOString();
+
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
   }
 
