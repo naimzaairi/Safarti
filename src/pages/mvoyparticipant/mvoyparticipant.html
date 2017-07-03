@@ -4,20 +4,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
 
 <h1> Résumé du voyage</h1>
-
-<ion-card>
+<div *ngFor="let participation of participation">
+<ion-card >
 
   <ion-item>
     <ion-avatar item-start>
       <ion-icon name="car" class="icon-size"></ion-icon>
     </ion-avatar>
     <div class="inline">
-      <h2>Casablanca - Marrakech</h2>
-      <p>Jour: 17/07/2017</p>
-      <p>Heure: 15:30 </p>
+      <h2>{{participation.voyage.depart}} - {{ participation.voyage.destination}}</h2>
+      <p>Jour: {{participation.voyage.date}}</p>
+      <p>Heure: {{participation.voyage.heure}} </p>
+      <p>Prix: {{participation.voyage.prix}}</p>
     </div>
   </ion-item>
 
@@ -27,12 +28,12 @@
 
   <ion-card>
     <ion-card-header>
-      Jean-Piere Salmon
+      {{participation.user.nom}} {{participation.user.prenom}}
     </ion-card-header>
     <ion-card-content>
-      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>
+      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: {{participation.user.telephone}}</h3> <br/>
 
-      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: jp-salmon@gmail.com</h3>  
+      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: {{participation.user.email}}</h3>  
     </ion-card-content>
 
     <ion-row>
@@ -47,8 +48,8 @@
   </ion-row>
   </ion-card>  
     
-  <button ion-button full>Annuler Voyage</button>
+  <button ion-button full (tap)="deleteParticipation(participation.id)">Annuler Voyage</button>
           
-  
+</div>
 
 </ion-content>

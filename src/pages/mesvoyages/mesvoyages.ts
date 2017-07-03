@@ -16,37 +16,47 @@ export class MesVoyagesPage {
   voyagesParticipant: any;
   voyageId;
   participationId;
-
-  constructor(private navCtrl: NavController, private auth: AuthService, private voyage: VoyageService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { 
-      let currUser = this.auth.getUserInfo();
-      this.voyage.voyagesPreparant(currUser.id).subscribe(data=>{
-        if(data){
-          this.voyagesPreparant = data;
-        }else{
-
-        }
-      },
-      error =>{
-        this.showError(error);
-      }
-      );
-
-      this.voyage.voyagesParticipant(currUser.id).subscribe(data=>{
-        if(data){
-          this.voyagesParticipant = data;
-        }else{
-
-        }
-      },
-      error =>{
-        this.showError(error);
-      }
-      );
-
+  messageParticipant;
+  messagePreparant;
+  currUser;
+  constructor(private navCtrl: NavController, private auth: AuthService, private voyage: VoyageService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {      
+    this.currUser = this.auth.getUserInfo();;
   }
 
+    loadMesVoyages(){
+      
+      this.voyage.voyagesPreparant(this.currUser.id).subscribe(data=>{
+        if(data instanceof Array){
+          this.voyagesPreparant = data;
+          this.messagePreparant = null;
+        }else{
+          this.messagePreparant = data;
+        }
+      },
+      error =>{
+        this.showError(error);
+      }
+      );
 
-  showVoyPrepDetail(voyageId) {
+    }
+
+    loadMesParticipations(){
+        this.voyage.voyagesParticipant(this.currUser.id).subscribe(data=>{
+        if(data instanceof Array){
+          this.voyagesParticipant = data;
+          this.messageParticipant = null;
+        }else{
+          this.messageParticipant = data;
+        }
+      },
+      error =>{
+        this.showError(error);
+      }
+      );
+    }
+
+    showVoyPrepDetail(voyageId) {
+      console.log(voyageId);
     this.navCtrl.push(MVoyPreparantPage, {voyageId: voyageId});
 
   }
@@ -58,7 +68,7 @@ export class MesVoyagesPage {
 
     showError(text) {
     let alert = this.alertCtrl.create({
-      title: 'Erreur d\'authentification',
+      title: 'Erreur',
       subTitle: text,
       buttons: ['OK']
     });

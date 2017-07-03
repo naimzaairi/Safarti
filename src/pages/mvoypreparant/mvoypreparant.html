@@ -8,16 +8,16 @@
 
 <h1> Résumé du voyage</h1>
 
-<ion-card>
+<ion-card *ngFor="let voyage of voyageInfo?.voyage">
 
   <ion-item>
     <ion-avatar item-start>
       <ion-icon name="car" class="icon-size"></ion-icon>
     </ion-avatar>
     <div class="inline">
-      <h2>Casablanca - Rabat</h2>
-      <p>Jour: 01/07/2017</p>
-      <p>Heure: 14:30 </p>
+      <h2>{{voyage.depart}} - {{voyage.destination}}</h2>
+      <p>Jour: {{voyage.date}}</p>
+      <p>Heure: {{voyage.heure}} </p>
     </div>
   </ion-item>
 
@@ -25,14 +25,14 @@
 
 <h1> Les participants </h1>
 
-  <ion-card>
+  <ion-card *ngFor="let participant of voyageInfo?.participants">
     <ion-card-header>
-      Naïm Zaaïri
+      {{participant.user.nom}} {{participant.user.prenom}}
     </ion-card-header>
     <ion-card-content>
-      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>
+      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: {{participant.user.telephone}}</h3> <br/>
 
-      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: n.zaairi96@gmail.com</h3>  
+      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: {{participant.user.email}}</h3>  
     </ion-card-content>
 
     <ion-row>
@@ -53,64 +53,6 @@
 
   </ion-row>
   </ion-card>  
-
-  <ion-card>
-    <ion-card-header>
-      Abdelilah Benhima
-    </ion-card-header>
-    <ion-card-content>
-      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 03 05 07 08</h3> <br/>
-
-      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: abdelilahben@gmail.com</h3>  
-    </ion-card-content>
-
-    <ion-row>
-
-    <ion-col>
-      <button ion-button icon-left clear class="text-vert">
-        <ion-icon name="call"></ion-icon>
-        <div class="text-vert">Appeler</div>
-      </button>
-    </ion-col>
-
-    <ion-col>
-      <button ion-button icon-left clear>
-        <ion-icon name="close-circle"></ion-icon>
-        <div>Supprimer</div>
-      </button>
-    </ion-col>
-
-  </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Jean-Pierre Salmon
-    </ion-card-header>
-    <ion-card-content>
-      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: 06 01 02 03 04</h3> <br/>
-
-      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: jp-salmon@gmail.com</h3>  
-    </ion-card-content>
-
-    <ion-row>
-
-    <ion-col>
-      <button ion-button icon-left clear class="text-vert">
-        <ion-icon name="call"></ion-icon>
-        <div class="text-vert">Appeler</div>
-      </button>
-    </ion-col>
-
-    <ion-col>
-      <button ion-button icon-left clear>
-        <ion-icon name="close-circle"></ion-icon>
-        <div>Supprimer</div>
-      </button>
-    </ion-col>
-
-  </ion-row>
-  </ion-card>
     
   <button ion-button full>Annuler Voyage</button>
           

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 export class voyage{
     depart: string;
@@ -88,6 +89,7 @@ export class VoyageService{
             return Observable.throw("Aucun voyage n'est selectionner");
         }else{
             return Observable.create(observer=>{
+                console.log(voyage_id+"-----------");
                 let url = "http://localhost:8000/voyage/"+voyage_id;
                 let headers = new Headers({'Content-type':'application/json'});
                 let options = new RequestOptions({headers: headers});
@@ -113,6 +115,25 @@ export class VoyageService{
                 let options = new RequestOptions({headers: headers});
 
                 this.http.get(url, options)
+                    .map(res => res.json())
+                    .subscribe(data => {
+                        observer.next(data);
+                        observer.complete();
+                    });
+            });
+        }
+    }
+
+    public deleteParticipation(participation_id){
+        if(participation_id == null || participation_id == 0){
+            return Observable.throw("Aucun voyage n'est selectionner");
+        }else{
+            return Observable.create(observer=>{
+                let url = "http://localhost:8000/participation/"+participation_id;
+                let headers = new Headers({'Content-type':'application/json'});
+                let options = new RequestOptions({headers: headers});
+
+                this.http.delete(url, options)
                     .map(res => res.json())
                     .subscribe(data => {
                         observer.next(data);
