@@ -50,16 +50,6 @@ export class AuthService {
           });
       });
     }
-
-    /*
-    return Observable.create(observer => {
-      // At this point make a request to your backend to make a real check!
-      let access = (credentials.password === "pass" && credentials.email === "email");
-      this.currentUser = new User(credentials.nom, credentials.prenom, credentials.email, 
-      credentials.password, credentials.telephone);
-      observer.next(access);
-      observer.complete();
-    });*/
   }
 
   public register(credentials) {

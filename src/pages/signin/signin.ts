@@ -15,11 +15,6 @@ export class SigninPage {
 
   constructor(private navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
 
-  //A SUPPRIMER QUAND MODIFICATION EST TERMINE
-  showHome() {
-    this.navCtrl.push(HomePage);
-  }
-
 
   public login(){
     this.showLoading();
@@ -27,7 +22,7 @@ export class SigninPage {
       if(data == "No user was found"){
         this.showError("Verifier vos identifiants");
       }else{
-         this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(TabsPage);
       }
     },
     error =>{
@@ -54,8 +49,9 @@ export class SigninPage {
     });
     alert.present(prompt);
   }
+
   showTabsPage(): void{
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
 }

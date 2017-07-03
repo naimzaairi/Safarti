@@ -9,7 +9,7 @@
 <ion-content padding>
   
   <ion-segment [(ngModel)]="mesvoyages">
-    <ion-segment-button value="preparant">
+    <ion-segment-button value="preparant" >
       Je prépare
     </ion-segment-button>
     <ion-segment-button value="participant">
@@ -19,19 +19,20 @@
 
 <div [ngSwitch]="mesvoyages">
   <ion-list *ngSwitchCase="'preparant'">
-      <ion-item>
-        <h2>Casablanca - Rabat</h2>
-        <span> 15/07/2017</span> - <span>15:30</span>
-        <p>Naïm Zaaïri</p>
-        <button ion-button clear item-right (tap)="showVoyPrepDetail()" >View</button>
+
+      <ion-item *ngFor="let voyage of voyagesPreparant">
+        <h2>{{voyage.depart}} - {{ voyage.destination }}</h2>
+        <span> {{voyage.date}}</span> - <span>{{ voyage.heure }}</span>
+        <p>{{voyage.user.nom}} {{voyage.user.prenom}}</p>
+        <button ion-button clear item-right (tap)="showVoyPrepDetail(voyage.id)" >View</button>
     </ion-item>
   </ion-list>
 
   <ion-list *ngSwitchCase="'participant'">
-    <ion-item>
-      <h2>Casablanca - Marrakech</h2>
-      <span> 17/07/2017</span> - <span>15:30</span>
-      <p>Naïm Zaaïri</p>
+    <ion-item *ngFor="let participation of voyagesParticipant">
+      <h2>{{participation.voyage.depart}} - {{ participation.voyage.destination }}</h2>
+      <span> {{participation.voyage.date}}</span> - <span>{{ participation.voyage.heure }}</span>
+        <p>{{participation.voyage.user.nom}} {{participation.voyage.user.prenom}}</p>
       <button ion-button clear item-right (tap)="showVoyPartDetail()" >View</button>
     </ion-item>
   </ion-list>

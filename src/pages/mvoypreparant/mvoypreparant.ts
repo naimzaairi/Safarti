@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-mvoypreparant',
@@ -7,7 +7,8 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class MVoyPreparantPage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, public alertCtrl: AlertController) {
+    console.log(navParams.get("voyageId"));
   }
 
 
