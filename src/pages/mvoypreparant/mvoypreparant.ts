@@ -27,6 +27,15 @@ export class MVoyPreparantPage {
     );
   }
 
+  deleteParticipation(participation_id){
+    this.voyage.deleteParticipation(participation_id).subscribe(data=>{
+      if(data){
+        this.showInformation(data);
+      }
+    });
+    this.navCtrl.setRoot(MesVoyagesPage);
+  }
+
    showInformation(text) {
     let alert = this.alertCtrl.create({
       title: 'Erreur',
