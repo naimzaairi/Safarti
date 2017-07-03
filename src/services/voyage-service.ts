@@ -142,4 +142,23 @@ export class VoyageService{
             });
         }
     }
+
+    public deleteVoyage(voyage_id){
+        if(voyage_id == null || voyage_id == 0){
+            return Observable.throw("Aucun voyage n'est selectionner");
+        }else{
+            return Observable.create(observer=>{
+                let url = "localhost:8000/voyage/"+voyage_id;
+                let headers = new Headers({'Content-Type': "application/json"});
+                let options = new RequestOptions({headers:headers});
+
+                this.http.delete(url, options)
+                    .map(res => res.json())
+                    .subscribe(data =>{
+                        observer.next(data);
+                        observer.complete();
+                    })
+            })
+        }
+    }
 }

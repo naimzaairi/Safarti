@@ -33,6 +33,15 @@ export class MVoyPreparantPage {
         this.showInformation(data);
       }
     });
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  }
+
+  deleteVoyage(voyage_id){
+    this.voyage.deleteVoyage(voyage_id).subscribe(data=>{
+      if(data){
+        this.showInformation(data);
+      }
+    });
     this.navCtrl.setRoot(MesVoyagesPage);
   }
 
