@@ -110,7 +110,7 @@ export class VoyageService{
             return Observable.throw("Aucun voyage n'est selectionner");
         }else{
             return Observable.create(observer=>{
-                let url = "http://localhost:8000/voyage/"+participation_id;
+                let url = "http://localhost:8000/participation/"+participation_id;
                 let headers = new Headers({'Content-type':'application/json'});
                 let options = new RequestOptions({headers: headers});
 
