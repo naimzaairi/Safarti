@@ -45,7 +45,7 @@
     </ion-col>
 
     <ion-col>
-      <button ion-button icon-left clear>
+      <button ion-button icon-left clear (tap)="deleteParticipation(participant.id)">
         <ion-icon name="close-circle"></ion-icon>
         <div>Supprimer</div>
       </button>
