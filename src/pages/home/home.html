@@ -7,28 +7,34 @@
     <ion-list>
 
         <div id="home-form">
+             <form #searchVoyageForm="ngForm">
            <ion-list>
 
                 <ion-item>
+                    <ion-label floating>Départ</ion-label>
+                    <ion-input type="text" name="depart" [(ngModel)]="voyageInfo.depart"></ion-input>
+                </ion-item>
+                <ion-item>
                     <ion-label floating>Destination</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="text" name="destination" [(ngModel)]="voyageInfo.destination"></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Départ</ion-label>
-                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+                  <ion-label>Date départ</ion-label>
+                  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY"  name="date" [(ngModel)]="voyageInfo.date"></ion-datetime>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Heure</ion-label>
-                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myDate"></ion-datetime>
+                  <ion-label>Heure départ</ion-label>
+                  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" name="heure" [(ngModel)]="voyageInfo.heure"></ion-datetime>
                 </ion-item>
 
-                <button class="btn-red" (tap)="showResults()" ion-button full>Rechercher</button>
+                <button class="btn-red" (tap)="showResults()" type="submit" [disabled]="!searchVoyageForm.form.valid" ion-button full>Rechercher !</button>
 
             </ion-list>
-
-                <button id="btn-create" (tap)="showCreateVoyage()" ion-button outline>Créer un voyage !</button>
+          
+          </form>
+           <button id="btn-create"  (tap)="showCreateVoyage()" ion-button outline>Créer un voyage !</button>
         </div>
         
     </ion-list>

@@ -4,30 +4,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
 
-<ion-card>
+<div *ngFor="let voyage of voyageInfo?.voyage">
+<ion-card >
 
   <ion-item>
     <ion-avatar item-start>
+      <ion-icon name="car" class="icon-size"></ion-icon>
     </ion-avatar>
-    <h2>Casablanca - Rabat</h2>
-    <p>01/07/2017</p>
-    <p>14:30 </p>
+    <div class="inline">
+      <h2>{{voyage.depart}} - {{ voyage.destination}}</h2>
+      <p>Jour: {{voyage.date}}</p>
+      <p>Heure: {{voyage.heure}} </p>
+      <p>Prix: {{voyage.prix}}</p>
+    </div>
   </ion-item>
 
-  <ion-card-content>
-    <h2 class="title">Contact</h2>
-    <ion-icon name="person"></ion-icon> Organisateur: <h3> Naïm Zaaïri</h3>
-    <ion-icon name="call"></ion-icon> Téléphone: <h3> 06 01 02 03 04</h3>
-    <ion-icon name="mail"></ion-icon> Mail: <h3> n.zaairi96@gmail.com</h3>
-  </ion-card-content>
+</ion-card>
 
-  <ion-row>
+<h1> L'organisateur </h1>
+
+  <ion-card>
+    <ion-card-header>
+      {{voyage.user.nom}} {{voyage.user.prenom}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-icon name="call"></ion-icon> <h3 class="inline">Téléphone: {{voyage.user.telephone}}</h3> <br/>
+
+      <ion-icon name="mail"></ion-icon> <h3 class="inline">Mail: {{voyage.user.email}}</h3>  
+    </ion-card-content>
+
+    <ion-row>
 
     <ion-col>
 
-      <button ion-button icon-left clear>
+      <button ion-button icon-left clear (tap)="participer(voyage.id)">
         <ion-icon name="checkmark"></ion-icon>
         <div>Participer !</div>
       </button>
@@ -41,10 +53,7 @@
     </ion-col>
 
   </ion-row>
-
-</ion-card>
-    
-          
-  
+</ion-card>      
+</div>
 
 </ion-content>

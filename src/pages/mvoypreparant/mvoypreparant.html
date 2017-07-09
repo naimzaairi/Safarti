@@ -20,7 +20,7 @@
       <p>Heure: {{voyage.heure}} </p>
     </div>
   </ion-item>
-  <button ion-button  (tap)="deleteVoyage(voyage.id)">Annuler Voyage</button>
+  <button ion-button (tap)="deleteVoyage(voyage.id)">Annuler Voyage</button>
 
 </ion-card>
 
@@ -46,7 +46,7 @@
     </ion-col>
 
     <ion-col>
-      <button ion-button icon-left clear (tap)="deleteParticipation(participant.id)">
+      <button ion-button icon-left clear type="submit" (tap)="deleteParticipation(participant.id)">
         <ion-icon name="close-circle"></ion-icon>
         <div>Supprimer</div>
       </button>
@@ -54,9 +54,5 @@
 
   </ion-row>
   </ion-card>  
-    
-
-          
-  
 
 </ion-content>

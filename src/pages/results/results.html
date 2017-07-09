@@ -10,14 +10,15 @@
 
         <div id="menu-signin">
           <ion-list>
-                <ion-item>
+                <ion-item *ngFor="let voyage of voyages">
                     <ion-thumbnail item-left>
                         <ion-icon name="contact"></ion-icon>
                     </ion-thumbnail>
-                    <h2>Casablanca - Rabat</h2>
-                    <span> 01/07/2017</span> - <span>15:30</span>
-                    <p>Naïm Zaaïri</p>
-                    <button ion-button clear item-right (tap)="showResearchDetail()">View</button>
+                    <h2>{{voyage.depart}} - {{voyage.destination}}</h2>
+                    <span> {{voyage.date}}</span> - <span>{{voyage.heure}}</span>
+                    <span>{{voyage.prix}} DHs</span>
+                     <p>{{voyage.user.nom}} {{voyage.user.prenom}}</p>
+                    <button ion-button clear item-right (tap)="showResearchDetail(voyage.id)">View</button>
                 </ion-item>
             </ion-list>
         </div>

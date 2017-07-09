@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController,NavParams } from 'ionic-angular';
 
 import { ResearchDetailPage } from '../researchdetail/researchdetail';
 
@@ -10,14 +10,16 @@ import { ResearchDetailPage } from '../researchdetail/researchdetail';
 })
 export class ResultsPage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-    console.log("Coucou !")
+  voyages: any;
+
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private navParams: NavParams) {
+  
+   this.voyages = navParams.get("voyagesResult");
+
   }
 
-  showResearchDetail() {
-
-    this.navCtrl.push(ResearchDetailPage);
-
+  showResearchDetail(voyageId) {
+    this.navCtrl.push(ResearchDetailPage, {voyageId: voyageId});
   }
 
   
